@@ -38,7 +38,7 @@
                 android:textSize="14sp"
                 android:textColor="#666666"
                 android:layout_toEndOf="@id/employeePhoto"
-                android:layout_alignParentBottom="@id/employeeName"/>
+                android:layout_below="@id/employeeName"/>
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

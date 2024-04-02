@@ -1,7 +1,9 @@
 package com.square.employeeconnect
 
+import android.util.Log
+
 class MainActivityPresenter: MainActivityContract.Presenter {
     override fun getData() {
-        // To Do
+        Log.d("@@@@@@@@@@@@@@@@@@@", "Presenter and injection working correctly")
     }
 }

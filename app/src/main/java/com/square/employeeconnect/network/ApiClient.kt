@@ -3,8 +3,8 @@ package com.square.employeeconnect.network
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ApiClient {
-    val BASE_URL = "https://s3.amazonaws.com/"
+object ApiClient {
+    val BASE_URL = "https://s3.amazonaws.com/sq-mobile-interview/"
     lateinit var retrofit: Retrofit
 
     fun getClient(): Retrofit {

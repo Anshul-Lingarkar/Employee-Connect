@@ -1,15 +1,21 @@
 package com.square.employeeconnect.employeeslist.employeesdata
 
-data class employees(
-    var uuid: String,
-    var full_name: String,
-    var phone_number: String?,
-    var email_address: String,
-    var biography: String,
-    var photo_url_small: String?,
-    var photo_url_large: String?,
-    var team: String,
-    var employee_type: EmployeeType       //Need to make a enum
+import com.google.gson.annotations.SerializedName
+
+data class employees (
+    @SerializedName("uuid") val uuid: String? = null,
+    @SerializedName("full_name") val fullName: String? = null,
+    @SerializedName("phone_number") val phoneNumber: String? = null,
+    @SerializedName("email_address") val emailAddress: String? = null,
+    @SerializedName("biography") val biography: String? = null,
+    @SerializedName("photo_url_small") val photoUrlSmall: String? = null,
+    @SerializedName("photo_url_large") val photoUrlLarge: String? = null,
+    @SerializedName("team") val team: String? = null,
+    @SerializedName("employee_type") val employeeType: EmployeeType? = null
+)
+
+data class EmployeeList (
+    @SerializedName("employees") val employees: List<employees>
 )
 
 enum class EmployeeType {

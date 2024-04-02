@@ -8,13 +8,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.square.employeeconnect.R
+import com.square.employeeconnect.employeeslist.employeesdata.EmployeeList
 import com.square.employeeconnect.employeeslist.employeesdata.employees
 
 class EmployeesListAdapter(var context: Context?, var employeesList: List<employees>): RecyclerView.Adapter<EmployeesListAdapter.EmployeesListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmployeesListViewHolder {
-        val employeesView = LayoutInflater.from(context).inflate(R.layout.employees_card_view, parent, false)
+        val employeesView =
+            LayoutInflater.from(context).inflate(R.layout.employees_card_view, parent, false)
         return EmployeesListViewHolder(employeesView, context)
     }
 
@@ -27,19 +30,25 @@ class EmployeesListAdapter(var context: Context?, var employeesList: List<employ
         holder.bind(pos)
     }
 
-    fun setAdapter(list: List<employees>) {
-        employeesList = list
+    fun setAdapter(list: EmployeeList) {
+        // Now, employeesList is of type List<Employee> sorted by team and then by name
+        employeesList = list.employees
+        //Not used in many of the code available on Github - check how they have done it
         notifyDataSetChanged()
     }
 
-    class EmployeesListViewHolder(itemView: View, private var context: Context?) : RecyclerView.ViewHolder(itemView) {
+    class EmployeesListViewHolder(itemView: View, private var context: Context?) :
+        RecyclerView.ViewHolder(itemView) {
         fun bind(empl: employees) {
-            itemView.findViewById<TextView>(R.id.employeeName).text = empl.full_name
+            itemView.findViewById<TextView>(R.id.employeeName).text = empl.fullName
             itemView.findViewById<TextView>(R.id.employeeTeam).text = empl.team
             var profile = itemView.findViewById<ImageView>(R.id.employeePhoto)
             context?.let {
                 Glide.with(it)
-                    .load(empl.photo_url_large)
+                    .load(empl.photoUrlLarge)
+                    .placeholder(R.drawable.ic_placeholder_image)
+                    .error(R.drawable.ic_placeholder_image)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(profile)
             }
         }
