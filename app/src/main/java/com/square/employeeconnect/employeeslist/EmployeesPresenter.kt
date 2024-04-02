@@ -1,13 +1,9 @@
 package com.square.employeeconnect.employeeslist
 
-import android.view.View
-import com.square.employeeconnect.di.App
 import com.square.employeeconnect.employeeslist.adapters.EmployeesListAdapter
 import com.square.employeeconnect.employeeslist.employeesdata.EmployeeList
-import com.square.employeeconnect.employeeslist.employeesdata.employees
-import javax.inject.Inject
 
-class EmployeesPresenter(): EmployeesModel.OnFinishedListener, EmployeesContract.Presenter {
+class EmployeesPresenter() : EmployeesModel.OnFinishedListener, EmployeesContract.Presenter {
 
     lateinit var employeesListAdapter: EmployeesListAdapter
 
@@ -24,15 +20,15 @@ class EmployeesPresenter(): EmployeesModel.OnFinishedListener, EmployeesContract
     }
 
     override fun onSuccess(employees: EmployeeList?) {
-        if(employees?.employees?.isEmpty() == true) {
+        if (employees?.employees?.isEmpty() == true) {
             employeesView.showEmptyView()
         } else {
             //Logic here to check if EmployeeList is well formed
             val isWellFormed = checkWellFormedEmployeeList(employees)
             // Logic here to group and sort the EmployeeList and then send to adapter
-            if(isWellFormed) {
-                employees?.employees?.sortedBy { it.team } // Sort employees by team
-                employeesView.setDataToRecyclerView(employees, employeesListAdapter)
+            if (isWellFormed) {
+                val sortedEmployeesList = employees?.employees?.sortedBy { it.team }
+                employeesView.setDataToRecyclerView(sortedEmployeesList?: emptyList(), employeesListAdapter)
             } else {
                 employeesView.showEmptyView()
             }
@@ -41,7 +37,7 @@ class EmployeesPresenter(): EmployeesModel.OnFinishedListener, EmployeesContract
 
     override fun checkWellFormedEmployeeList(employees: EmployeeList?): Boolean {
         //employees?.employees.get
-        if(employees?.employees != null) {
+        if (employees?.employees != null) {
             for (employee in employees.employees) {
                 if (employee.fullName.isNullOrBlank() ||
                     employee.phoneNumber.isNullOrBlank() ||
@@ -59,6 +55,7 @@ class EmployeesPresenter(): EmployeesModel.OnFinishedListener, EmployeesContract
     }
 
     override fun onFailure(message: String) {
+        employeesView.showEmptyView()
         employeesView.onResponseFailure(message)
     }
 

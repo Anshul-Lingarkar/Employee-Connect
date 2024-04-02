@@ -6,7 +6,7 @@ import com.square.employeeconnect.employeeslist.employeesdata.employees
 
 interface EmployeesContract {
     interface View {
-        fun setDataToRecyclerView(employees: EmployeeList?, employeesAdapter: EmployeesListAdapter)
+        fun setDataToRecyclerView(employees: List<employees>, employeesAdapter: EmployeesListAdapter)
         fun onResponseFailure(message: String)
         fun showRefreshingIndicator()
         fun hideRefreshingIndicator()

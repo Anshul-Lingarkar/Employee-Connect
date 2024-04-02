@@ -6,12 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.square.employeeconnect.R
-import com.square.employeeconnect.employeeslist.employeesdata.EmployeeList
 import com.square.employeeconnect.employeeslist.employeesdata.employees
 
 class EmployeesListAdapter(var context: Context?, var employeesList: List<employees>, private val itemClickListener: OnItemClickListener) :
@@ -28,16 +26,16 @@ class EmployeesListAdapter(var context: Context?, var employeesList: List<employ
     }
 
     override fun onBindViewHolder(holder: EmployeesListViewHolder, position: Int) {
-        val pos = employeesList.get(position)
+        val pos = employeesList[position]
         holder.bind(pos)
         holder.itemView.setOnClickListener {
             itemClickListener.onItemClick(pos)
         }
     }
 
-    fun setAdapter(list: EmployeeList) {
+    fun setAdapter(list: List<employees>) {
         // Now, employeesList is of type List<Employee> sorted by team and then by name
-        employeesList = list.employees
+        employeesList = list
         //Not used in many of the code available on Github - check how they have done it
         notifyDataSetChanged()
     }

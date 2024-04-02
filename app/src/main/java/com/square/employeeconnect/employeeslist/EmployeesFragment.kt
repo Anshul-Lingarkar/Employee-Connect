@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,15 +16,16 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
 import com.square.employeeconnect.R
 import com.square.employeeconnect.di.App
 import com.square.employeeconnect.employeeslist.adapters.EmployeesListAdapter
-import com.square.employeeconnect.employeeslist.employeesdata.EmployeeList
 import com.square.employeeconnect.employeeslist.employeesdata.employees
 import javax.inject.Inject
 
-class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener, EmployeesListAdapter.OnItemClickListener {
+class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
+    EmployeesListAdapter.OnItemClickListener {
 
     lateinit var employeesListAdapter: EmployeesListAdapter
     lateinit var employeesRecyclerView: RecyclerView
     lateinit var emptyView: LinearLayout
+    lateinit var apiLoader: ProgressBar
 
     @Inject
     lateinit var presenter: EmployeesContract.Presenter
@@ -44,6 +45,8 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
         employeesRecyclerView = rootView.findViewById(R.id.recyclerViewEmployees)
         mSwipeRefreshLayout = rootView.findViewById(R.id.swipe_refresh_layout)
         emptyView = rootView.findViewById(R.id.emptyView)
+        apiLoader = rootView.findViewById(R.id.apiLoader)
+
         mSwipeRefreshLayout.setOnRefreshListener(this)
         employeesListAdapter = EmployeesListAdapter(context, ArrayList(), this)
 
@@ -58,13 +61,19 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
             presenter.requestDataFromServer()
             mSwipeRefreshLayout.isRefreshing = false
         }
-        employeesRecyclerView.visibility = View.VISIBLE
+        apiLoader.visibility = View.VISIBLE
+        employeesRecyclerView.visibility = View.GONE
         emptyView.visibility = View.GONE
         return rootView
     }
 
-    override fun setDataToRecyclerView(employees: EmployeeList?, employeesAdapter: EmployeesListAdapter) {
+    override fun setDataToRecyclerView(
+        employees: List<employees>,
+        employeesAdapter: EmployeesListAdapter
+    ) {
         if (employees != null) {
+            apiLoader.visibility = View.GONE
+            employeesRecyclerView.visibility = View.VISIBLE
             employeesAdapter.setAdapter(employees)
         }
     }
@@ -83,7 +92,7 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
     }
 
     override fun showEmptyView() {
-        employeesRecyclerView.visibility = View.GONE
+        apiLoader.visibility = View.GONE
         emptyView.visibility = View.VISIBLE
     }
 
@@ -92,7 +101,8 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
     }
 
     override fun onItemClick(employee: employees) {
-        Toast.makeText(context, "Employee Biography: ${employee.biography}", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "Employee Biography: ${employee.biography}", Toast.LENGTH_LONG)
+            .show()
     }
 
     companion object {
