@@ -10,13 +10,21 @@ interface EmployeeService {
 
     /*
     For testing purposes
+
+    //Correct response
     @GET("employees.json")
     fun getEmployees(): Call<EmployeeList>
 
+    //Empty response
     @GET("employees_empty.json")
     fun getEmployees(): Call<EmployeeList>
 
+    //Malformed response
     @GET("employees_malformed.json")
+    fun getEmployees(): Call<EmployeeList>
+
+    //Failure message
+    @GET("employees_.json")
     fun getEmployees(): Call<EmployeeList>
      */
 }

@@ -45,6 +45,8 @@ class EmployeesListAdapter(var context: Context?, var employeesList: List<employ
         fun bind(empl: employees) {
             itemView.findViewById<TextView>(R.id.employeeName).text = empl.fullName
             itemView.findViewById<TextView>(R.id.employeeTeam).text = empl.team
+            itemView.findViewById<TextView>(R.id.employeeContact).text = empl.phoneNumber
+            itemView.findViewById<TextView>(R.id.employeeEmail).text = empl.emailAddress
             var profile = itemView.findViewById<ImageView>(R.id.employeePhoto)
             context?.let {
                 Glide.with(it)

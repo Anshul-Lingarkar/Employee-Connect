@@ -40,6 +40,42 @@
                 android:layout_toEndOf="@id/employeePhoto"
                 android:layout_below="@id/employeeName"/>
 
+            <ImageView
+                android:id="@+id/employeeContactLogo"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_phone_image"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/employeePhoto"
+                android:layout_below="@id/employeeTeam"/>
+
+            <TextView
+                android:id="@+id/employeeContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_toEndOf="@id/employeePhoto"
+                android:layout_below="@id/employeeContactLogo"/>
+
+            <ImageView
+                android:id="@+id/employeeEmailLogo"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_email_logo"
+                android:layout_toEndOf="@id/employeePhoto"
+                android:layout_below="@id/employeeContact"/>
+
+            <TextView
+                android:id="@+id/employeeEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_toEndOf="@id/employeePhoto"
+                android:layout_below="@id/employeeEmailLogo"/>
+
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

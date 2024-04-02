@@ -1,7 +1,7 @@
 package com.square.employeeconnect.di
 
 import android.app.Application
-import com.square.employeeconnect.MainActivityModule
+import com.square.employeeconnect.BaseActivityModule
 import com.square.employeeconnect.employeeslist.EmployeesModule
 
 class App : Application() {
@@ -10,7 +10,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         component = DaggerAppComponent.builder()
-            .mainActivityModule(MainActivityModule())
+            .baseActivityModule(BaseActivityModule())
             .employeesModule(EmployeesModule())
             .build()
     }

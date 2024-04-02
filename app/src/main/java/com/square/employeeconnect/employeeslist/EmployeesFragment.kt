@@ -26,11 +26,10 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
     lateinit var employeesRecyclerView: RecyclerView
     lateinit var emptyView: LinearLayout
     lateinit var apiLoader: ProgressBar
+    lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
 
     @Inject
     lateinit var presenter: EmployeesContract.Presenter
-
-    lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
