@@ -20,7 +20,7 @@ import com.square.employeeconnect.employeeslist.employeesdata.EmployeeList
 import com.square.employeeconnect.employeeslist.employeesdata.employees
 import javax.inject.Inject
 
-class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener {
+class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener, EmployeesListAdapter.OnItemClickListener {
 
     lateinit var employeesListAdapter: EmployeesListAdapter
     lateinit var employeesRecyclerView: RecyclerView
@@ -45,7 +45,7 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener 
         mSwipeRefreshLayout = rootView.findViewById(R.id.swipe_refresh_layout)
         emptyView = rootView.findViewById(R.id.emptyView)
         mSwipeRefreshLayout.setOnRefreshListener(this)
-        employeesListAdapter = EmployeesListAdapter(context, ArrayList())
+        employeesListAdapter = EmployeesListAdapter(context, ArrayList(), this)
 
         //Check this does??
         employeesRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -89,6 +89,10 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener 
 
     override fun onRefresh() {
         // not required
+    }
+
+    override fun onItemClick(employee: employees) {
+        Toast.makeText(context, "Employee Biography: ${employee.biography}", Toast.LENGTH_LONG).show()
     }
 
     companion object {

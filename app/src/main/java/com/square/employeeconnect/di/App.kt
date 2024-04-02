@@ -4,7 +4,7 @@ import android.app.Application
 import com.square.employeeconnect.MainActivityModule
 import com.square.employeeconnect.employeeslist.EmployeesModule
 
-class App: Application() {
+class App : Application() {
     private var component: AppComponent? = null
 
     override fun onCreate() {
