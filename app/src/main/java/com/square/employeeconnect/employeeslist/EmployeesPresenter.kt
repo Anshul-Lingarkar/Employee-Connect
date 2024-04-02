@@ -31,6 +31,7 @@ class EmployeesPresenter(): EmployeesModel.OnFinishedListener, EmployeesContract
             val isWellFormed = checkWellFormedEmployeeList(employees)
             // Logic here to group and sort the EmployeeList and then send to adapter
             if(isWellFormed) {
+                employees?.employees?.sortedBy { it.team } // Sort employees by team
                 employeesView.setDataToRecyclerView(employees, employeesListAdapter)
             } else {
                 employeesView.showEmptyView()
