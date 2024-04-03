@@ -1,7 +1,6 @@
 package com.squareuptest.employeeconnect.employeeslist
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +19,7 @@ import com.squareuptest.employeeconnect.employeeslist.adapters.EmployeesListAdap
 import com.squareuptest.employeeconnect.employeeslist.employeesdata.employees
 import javax.inject.Inject
 
+
 class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
     EmployeesListAdapter.OnItemClickListener {
 
@@ -31,6 +31,7 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
 
     @Inject
     lateinit var presenter: EmployeesContract.Presenter
+    lateinit var rootView: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +43,7 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView = inflater.inflate(R.layout.fragment_employees, container, false)
+        rootView = inflater.inflate(R.layout.fragment_employees, container, false)
 
         //Setup all the views on the fragment
         employeesRecyclerView = rootView.findViewById(R.id.recyclerViewEmployees)
@@ -107,8 +108,8 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
 
     override fun onItemClick(employee: employees) {
         //Showing Employee Biography for each employees on clicking the list item.
-        Toast.makeText(context, "Employee Biography: ${employee.biography}", Toast.LENGTH_LONG)
-            .show()
+        val snackbar = Snackbar.make(rootView, "Employee Biography: ${employee.biography}", Snackbar.LENGTH_LONG)
+        snackbar.show()
     }
 
 }
