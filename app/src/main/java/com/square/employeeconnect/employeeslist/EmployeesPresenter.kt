@@ -39,9 +39,11 @@ class EmployeesPresenter() : EmployeesModel.OnFinishedListener, EmployeesContrac
     override fun checkWellFormedEmployeeList(employees: EmployeeList?): Boolean {
         if (employees?.employees != null) {
             for (employee in employees.employees) {
-                if (employee.fullName.isNullOrBlank() ||
-                    employee.phoneNumber.isNullOrBlank() ||
-                    employee.team.isNullOrBlank()
+                if (employee.uuid.isNullOrBlank() ||
+                    employee.fullName.isNullOrBlank() ||
+                    employee.emailAddress.isNullOrBlank() ||
+                    employee.team.isNullOrBlank() ||
+                    employee.employeeType.toString().isBlank()
                 ) {
                     return false
                 }

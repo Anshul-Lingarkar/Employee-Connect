@@ -33,6 +33,7 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //Dagger setup
         (requireActivity().application as App).getComponent()?.inject(this)
     }
 
@@ -41,16 +42,20 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
         savedInstanceState: Bundle?
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_employees, container, false)
+
+        //Setup all the views on the fragment
         employeesRecyclerView = rootView.findViewById(R.id.recyclerViewEmployees)
         mSwipeRefreshLayout = rootView.findViewById(R.id.swipe_refresh_layout)
         emptyView = rootView.findViewById(R.id.emptyView)
         apiLoader = rootView.findViewById(R.id.apiLoader)
 
+        //Setting up the pull-to-refresh
         mSwipeRefreshLayout.setOnRefreshListener(this)
         employeesListAdapter = EmployeesListAdapter(context, ArrayList(), this)
 
-        //Check this does??
         employeesRecyclerView.layoutManager = LinearLayoutManager(context)
+
+        //Setting up the adapter for recycler view
         employeesRecyclerView.adapter = employeesListAdapter
         presenter.setAdapter(employeesListAdapter)
         presenter.setView(this)
@@ -70,14 +75,14 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
         employees: List<employees>,
         employeesAdapter: EmployeesListAdapter
     ) {
-        if (employees != null) {
-            apiLoader.visibility = View.GONE
-            employeesRecyclerView.visibility = View.VISIBLE
-            employeesAdapter.setAdapter(employees)
-        }
+        //Showing the Employees list when it has been received from the API call and it is not empty
+        apiLoader.visibility = View.GONE
+        employeesRecyclerView.visibility = View.VISIBLE
+        employeesAdapter.setAdapter(employees)
     }
 
     override fun onResponseFailure(message: String) {
+        //Showing the error message after API call
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
 
@@ -90,21 +95,19 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
     }
 
     override fun showEmptyView() {
+        //Showing the empty view incase of API failure, empty response or malformed employee details
         apiLoader.visibility = View.GONE
         emptyView.visibility = View.VISIBLE
     }
 
     override fun onRefresh() {
-        // not required
+        // Not required for this implementation
     }
 
     override fun onItemClick(employee: employees) {
+        //Showing Employee Biography for each employees on clicking the list item.
         Toast.makeText(context, "Employee Biography: ${employee.biography}", Toast.LENGTH_LONG)
             .show()
-    }
-
-    companion object {
-
     }
 
 }

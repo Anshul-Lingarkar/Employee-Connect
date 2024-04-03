@@ -12,6 +12,9 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.square.employeeconnect.R
 import com.square.employeeconnect.employeeslist.employeesdata.employees
 
+/*
+Adapter to create the RecyclerView for showing the list of employees
+ */
 class EmployeesListAdapter(
     var context: Context?,
     var employeesList: List<employees>,
