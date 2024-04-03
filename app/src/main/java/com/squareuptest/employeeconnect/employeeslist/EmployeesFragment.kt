@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -86,7 +85,8 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
 
     override fun onResponseFailure(message: String) {
         //Showing the error message after API call
-        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+        val snackbar = Snackbar.make(rootView, message, Snackbar.LENGTH_LONG)
+        snackbar.show()
     }
 
     override fun showRefreshingIndicator() {
