@@ -5,7 +5,7 @@ Android Studio Giraffe | 2022.3.1 Patch 2
 Android Studio Giraffe | 2022.3.1 Patch 2
 Gradle Version = 8.0
 Kotlin Version = 1.9.0
-Minimum SDK = 24
+Minimum SDK supported by the App = 24
 JUnit = 4.13.2
 Retrofit = 2.9.0
 Dagger = 2.16
@@ -14,7 +14,7 @@ Dagger = 2.16
 
 1. Begin by downloading the provided zip folder and extracting its contents.
 2. Launch Android Studio (Version utilized for this project: Android Studio Giraffe | 2022.3.1 Patch
-   2) and navigate to the root directory of the project - "EmployeeConnect".
+    2) and navigate to the root directory of the project - "EmployeeConnect".
 3. Synchronize the Gradle files to ensure proper configuration and using Gradle Version 8.0.
 4. Establish a connection between the laptop and an Android device, or start an emulator.
 5. From the toolbar, select "Run" and then choose "Run App" to execute the application.
@@ -27,7 +27,7 @@ Android application.
 I also worked on UI part of the Application, to develop a simple UI to cover all the aspects of the
 given requirements.
 
-During the development process, my primary focus was on working on the architecutre of the
+During the development process, my primary focus was on working on the architecture of the
 application. Key areas that I considered includes:
 
 1. App Architecture: I used the Model-View-Presenter (MVP) architecture my application. I also used
@@ -51,9 +51,10 @@ this Application.
 ## How long did you spend on this project?
 
 I spent around 6 hours for the development of this project.
+
 I had distributed my work over 4 days, where I worked on UI and basic setup, adding logo for the app
 on Day 1.
-Then I worked on using the Retrofit for API call, handlnig unnecessary API call while rotating the
+Then I worked on using the Retrofit for API call, handling unnecessary API call while rotating the
 phone screen, pull-to-refresh part and adding the employee photos, along with Basic UI testing of
 the App on Day 2.
 On Day 3, I worked on setting up the Dagger.
