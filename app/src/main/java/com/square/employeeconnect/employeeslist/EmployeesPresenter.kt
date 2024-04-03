@@ -6,9 +6,7 @@ import com.square.employeeconnect.employeeslist.employeesdata.EmployeeList
 class EmployeesPresenter() : EmployeesModel.OnFinishedListener, EmployeesContract.Presenter {
 
     lateinit var employeesListAdapter: EmployeesListAdapter
-
     var employeesModel: EmployeesModel = EmployeesModel()
-
     lateinit var employeesView: EmployeesFragment
 
     override fun setView(employeesView: EmployeesFragment) {
@@ -36,7 +34,6 @@ class EmployeesPresenter() : EmployeesModel.OnFinishedListener, EmployeesContrac
     }
 
     override fun checkWellFormedEmployeeList(employees: EmployeeList?): Boolean {
-        //employees?.employees.get
         if (employees?.employees != null) {
             for (employee in employees.employees) {
                 if (employee.fullName.isNullOrBlank() ||
@@ -60,7 +57,7 @@ class EmployeesPresenter() : EmployeesModel.OnFinishedListener, EmployeesContrac
     }
 
     override fun refreshData() {
-        employeesView.showRefreshingIndicator() // Show loading indicator
-        employeesView.hideRefreshingIndicator() // Hide
+        employeesView.showRefreshingIndicator()
+        employeesView.hideRefreshingIndicator()
     }
 }

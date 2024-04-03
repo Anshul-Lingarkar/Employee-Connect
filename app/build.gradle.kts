@@ -66,4 +66,8 @@ dependencies {
     implementation ("com.google.dagger:dagger-android:2.16")
     kapt ("com.google.dagger:dagger-compiler:2.16")
     implementation ("javax.inject:javax.inject:1")
+
+    //For writing Test cases
+    testImplementation ("org.mockito:mockito-core:3.12.4")
+    testImplementation ("org.mockito:mockito-inline:3.12.4")
 }

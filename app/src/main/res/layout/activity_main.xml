@@ -12,14 +12,14 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#E6000000"
+        android:background="#000000"
         android:theme="?attr/actionBarTheme">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/logo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_square_logo_white"
             android:layout_gravity="center"
             android:contentDescription="@string/app_name" />
 

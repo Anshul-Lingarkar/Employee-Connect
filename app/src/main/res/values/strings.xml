@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">app_name</string>
-    <string name="hello_blank_fragment">hello_blank_fragment</string>
     <string name="no_response">no_response</string>
 </resources>
