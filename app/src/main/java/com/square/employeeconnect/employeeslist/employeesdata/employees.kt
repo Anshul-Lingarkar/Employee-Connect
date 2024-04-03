@@ -2,7 +2,7 @@ package com.square.employeeconnect.employeeslist.employeesdata
 
 import com.google.gson.annotations.SerializedName
 
-data class employees (
+data class employees(
     @SerializedName("uuid") val uuid: String? = null,
     @SerializedName("full_name") val fullName: String? = null,
     @SerializedName("phone_number") val phoneNumber: String? = null,
@@ -14,7 +14,7 @@ data class employees (
     @SerializedName("employee_type") val employeeType: EmployeeType? = null
 )
 
-data class EmployeeList (
+data class EmployeeList(
     @SerializedName("employees") val employees: List<employees>
 )
 

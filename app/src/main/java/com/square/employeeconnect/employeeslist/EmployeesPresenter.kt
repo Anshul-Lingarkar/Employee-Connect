@@ -26,7 +26,10 @@ class EmployeesPresenter() : EmployeesModel.OnFinishedListener, EmployeesContrac
             // Logic here to group and sort the EmployeeList and then send to adapter
             if (isWellFormed) {
                 val sortedEmployeesList = employees?.employees?.sortedBy { it.team }
-                employeesView.setDataToRecyclerView(sortedEmployeesList?: emptyList(), employeesListAdapter)
+                employeesView.setDataToRecyclerView(
+                    sortedEmployeesList ?: emptyList(),
+                    employeesListAdapter
+                )
             } else {
                 employeesView.showEmptyView()
             }

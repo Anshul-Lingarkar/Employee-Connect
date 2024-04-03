@@ -12,7 +12,11 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.square.employeeconnect.R
 import com.square.employeeconnect.employeeslist.employeesdata.employees
 
-class EmployeesListAdapter(var context: Context?, var employeesList: List<employees>, private val itemClickListener: OnItemClickListener) :
+class EmployeesListAdapter(
+    var context: Context?,
+    var employeesList: List<employees>,
+    private val itemClickListener: OnItemClickListener
+) :
     RecyclerView.Adapter<EmployeesListAdapter.EmployeesListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmployeesListViewHolder {
@@ -47,7 +51,7 @@ class EmployeesListAdapter(var context: Context?, var employeesList: List<employ
             itemView.findViewById<TextView>(R.id.employeeTeam).text = empl.team
             itemView.findViewById<TextView>(R.id.employeeContact).text = empl.phoneNumber
             itemView.findViewById<TextView>(R.id.employeeEmail).text = empl.emailAddress
-            var profile = itemView.findViewById<ImageView>(R.id.employeePhoto)
+            val profile = itemView.findViewById<ImageView>(R.id.employeePhoto)
             context?.let {
                 Glide.with(it)
                     .load(empl.photoUrlLarge)

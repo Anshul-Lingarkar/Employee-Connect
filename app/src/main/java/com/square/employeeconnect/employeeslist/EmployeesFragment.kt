@@ -78,7 +78,6 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
     }
 
     override fun onResponseFailure(message: String) {
-        Log.e("********************", message)
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
 

@@ -15,14 +15,14 @@ class EmployeesModel {
         call.enqueue(object : Callback<EmployeeList> {
             override fun onResponse(call: Call<EmployeeList>, response: Response<EmployeeList>) {
                 if (response.isSuccessful) {
-                    Log.d("******************", "Success API Call")
                     listener.onSuccess(response.body())
                 } else {
-                    listener.onFailure("Failed to fetch data")
+                    listener.onFailure("Failed to fetch the employees data")
                 }
             }
+
             override fun onFailure(call: Call<EmployeeList>, t: Throwable) {
-                listener.onFailure(t.message ?: "Unknown error")
+                listener.onFailure(t.message ?: "Error in fetching the data")
             }
         })
     }

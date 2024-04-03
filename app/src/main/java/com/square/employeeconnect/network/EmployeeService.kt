@@ -22,7 +22,7 @@ interface EmployeeService {
     @GET("employees_malformed.json")
     fun getEmployees(): Call<EmployeeList>
 
-    //Failure message
+    //Failure response
     @GET("employees_.json")
     fun getEmployees(): Call<EmployeeList>
      */

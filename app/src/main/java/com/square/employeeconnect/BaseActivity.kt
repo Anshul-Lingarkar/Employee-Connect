@@ -13,7 +13,6 @@ class BaseActivity : AppCompatActivity(), BaseActivityContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //dependency injection
         (application as App).getComponent()?.inject(this)
 
         supportFragmentManager.beginTransaction()
@@ -22,11 +21,7 @@ class BaseActivity : AppCompatActivity(), BaseActivityContract.View {
         setContentView(R.layout.activity_main)
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
     override fun launchEmployeesFragment() {
-        //Do task by presenter
+        //Do task called by presenter
     }
 }

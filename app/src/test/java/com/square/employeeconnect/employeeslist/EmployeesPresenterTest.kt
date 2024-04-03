@@ -54,7 +54,7 @@ class EmployeesPresenterTest {
                 photoUrlSmall = "https://s3.amazonaws.com/sq-mobile-interview/photos/7959987e-0d64-4bf6-8b9e-da78deac3457/small.jpg",
                 photoUrlLarge = "https://s3.amazonaws.com/sq-mobile-interview/photos/7959987e-0d64-4bf6-8b9e-da78deac3457/large.jpg",
                 team = "Point of Sale",
-                employeeType = EmployeeType.PART_TIME
+                employeeType = EmployeeType.CONTRACTOR
             )
         )
         return EmployeeList(employees)
