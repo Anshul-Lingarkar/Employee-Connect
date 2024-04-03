@@ -79,6 +79,7 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
     ) {
         //Showing the Employees list when it has been received from the API call and it is not empty
         apiLoader.visibility = View.GONE
+        emptyView.visibility = View.GONE
         employeesRecyclerView.visibility = View.VISIBLE
         employeesAdapter.setAdapter(employees)
     }
@@ -98,6 +99,7 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
 
     override fun showEmptyView() {
         //Showing the empty view incase of API failure, empty response or malformed employee details
+        employeesRecyclerView.visibility = View.GONE
         apiLoader.visibility = View.GONE
         emptyView.visibility = View.VISIBLE
     }
