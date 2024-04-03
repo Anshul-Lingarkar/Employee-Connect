@@ -1,6 +1,6 @@
-package com.square.employeeconnect.employeeslist
+package com.squareuptest.employeeconnect.employeeslist
 
-import com.square.employeeconnect.employeeslist.adapters.EmployeesListAdapter
+import com.squareuptest.employeeconnect.employeeslist.adapters.EmployeesListAdapter
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

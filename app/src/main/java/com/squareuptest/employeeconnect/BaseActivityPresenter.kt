@@ -1,4 +1,4 @@
-package com.square.employeeconnect
+package com.squareuptest.employeeconnect
 
 class BaseActivityPresenter : BaseActivityContract.Presenter {
 

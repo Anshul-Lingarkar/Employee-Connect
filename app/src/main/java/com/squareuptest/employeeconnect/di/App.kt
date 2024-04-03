@@ -1,8 +1,8 @@
-package com.square.employeeconnect.di
+package com.squareuptest.employeeconnect.di
 
 import android.app.Application
-import com.square.employeeconnect.BaseActivityModule
-import com.square.employeeconnect.employeeslist.EmployeesModule
+import com.squareuptest.employeeconnect.BaseActivityModule
+import com.squareuptest.employeeconnect.employeeslist.EmployeesModule
 
 class App : Application() {
     private var component: AppComponent? = null

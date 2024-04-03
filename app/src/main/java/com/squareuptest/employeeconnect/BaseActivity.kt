@@ -1,9 +1,11 @@
-package com.square.employeeconnect
+package com.squareuptest.employeeconnect
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.square.employeeconnect.di.App
-import com.square.employeeconnect.employeeslist.EmployeesFragment
+import com.squareuptest.employeeconnect.BaseActivityContract
+import com.squareuptest.employeeconnect.R
+import com.squareuptest.employeeconnect.di.App
+import com.squareuptest.employeeconnect.employeeslist.EmployeesFragment
 import javax.inject.Inject
 
 class BaseActivity : AppCompatActivity(), BaseActivityContract.View {

@@ -1,8 +1,8 @@
-package com.square.employeeconnect.employeeslist
+package com.squareuptest.employeeconnect.employeeslist
 
-import com.square.employeeconnect.employeeslist.employeesdata.EmployeeList
-import com.square.employeeconnect.employeeslist.employeesdata.EmployeeType
-import com.square.employeeconnect.employeeslist.employeesdata.employees
+import com.squareuptest.employeeconnect.employeeslist.employeesdata.EmployeeList
+import com.squareuptest.employeeconnect.employeeslist.employeesdata.EmployeeType
+import com.squareuptest.employeeconnect.employeeslist.employeesdata.employees
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test

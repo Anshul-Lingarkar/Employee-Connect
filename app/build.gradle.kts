@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.square.employeeconnect"
+    namespace = "com.squareuptest.employeeconnect"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.square.employeeconnect"
+        applicationId = "com.squareuptest.employeeconnect"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

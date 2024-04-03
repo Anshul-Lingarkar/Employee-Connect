@@ -1,4 +1,4 @@
-package com.square.employeeconnect.employeeslist
+package com.squareuptest.employeeconnect.employeeslist
 
 import android.os.Bundle
 import android.util.Log
@@ -13,10 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
-import com.square.employeeconnect.R
-import com.square.employeeconnect.di.App
-import com.square.employeeconnect.employeeslist.adapters.EmployeesListAdapter
-import com.square.employeeconnect.employeeslist.employeesdata.employees
+import com.google.android.material.snackbar.Snackbar
+import com.squareuptest.employeeconnect.R
+import com.squareuptest.employeeconnect.di.App
+import com.squareuptest.employeeconnect.employeeslist.adapters.EmployeesListAdapter
+import com.squareuptest.employeeconnect.employeeslist.employeesdata.employees
 import javax.inject.Inject
 
 class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,

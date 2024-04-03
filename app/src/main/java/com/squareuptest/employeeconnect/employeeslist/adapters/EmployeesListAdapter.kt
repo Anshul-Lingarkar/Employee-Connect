@@ -1,4 +1,4 @@
-package com.square.employeeconnect.employeeslist.adapters
+package com.squareuptest.employeeconnect.employeeslist.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.square.employeeconnect.R
-import com.square.employeeconnect.employeeslist.employeesdata.employees
+import com.squareuptest.employeeconnect.R
+import com.squareuptest.employeeconnect.employeeslist.employeesdata.employees
 
 /*
 Adapter to create the RecyclerView for showing the list of employees

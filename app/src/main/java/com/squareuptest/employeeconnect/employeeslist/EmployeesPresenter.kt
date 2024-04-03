@@ -1,7 +1,7 @@
-package com.square.employeeconnect.employeeslist
+package com.squareuptest.employeeconnect.employeeslist
 
-import com.square.employeeconnect.employeeslist.adapters.EmployeesListAdapter
-import com.square.employeeconnect.employeeslist.employeesdata.EmployeeList
+import com.squareuptest.employeeconnect.employeeslist.adapters.EmployeesListAdapter
+import com.squareuptest.employeeconnect.employeeslist.employeesdata.EmployeeList
 
 class EmployeesPresenter() : EmployeesModel.OnFinishedListener, EmployeesContract.Presenter {
 

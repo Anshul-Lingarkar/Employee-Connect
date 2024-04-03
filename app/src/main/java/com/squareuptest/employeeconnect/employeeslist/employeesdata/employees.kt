@@ -1,4 +1,4 @@
-package com.square.employeeconnect.employeeslist.employeesdata
+package com.squareuptest.employeeconnect.employeeslist.employeesdata
 
 import com.google.gson.annotations.SerializedName
 

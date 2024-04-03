@@ -1,6 +1,6 @@
-package com.square.employeeconnect.network
+package com.squareuptest.employeeconnect.network
 
-import com.square.employeeconnect.employeeslist.employeesdata.EmployeeList
+import com.squareuptest.employeeconnect.employeeslist.employeesdata.EmployeeList
 import retrofit2.Call
 import retrofit2.http.GET
 

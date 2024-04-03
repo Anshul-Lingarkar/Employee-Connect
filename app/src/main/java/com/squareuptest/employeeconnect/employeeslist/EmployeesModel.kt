@@ -1,9 +1,9 @@
-package com.square.employeeconnect.employeeslist
+package com.squareuptest.employeeconnect.employeeslist
 
 import android.util.Log
-import com.square.employeeconnect.employeeslist.employeesdata.EmployeeList
-import com.square.employeeconnect.network.ApiClient
-import com.square.employeeconnect.network.EmployeeService
+import com.squareuptest.employeeconnect.employeeslist.employeesdata.EmployeeList
+import com.squareuptest.employeeconnect.network.ApiClient
+import com.squareuptest.employeeconnect.network.EmployeeService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

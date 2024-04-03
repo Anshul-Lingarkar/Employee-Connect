@@ -1,4 +1,4 @@
-package com.square.employeeconnect.network
+package com.squareuptest.employeeconnect.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

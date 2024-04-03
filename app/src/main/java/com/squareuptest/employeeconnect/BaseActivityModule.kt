@@ -1,4 +1,4 @@
-package com.square.employeeconnect
+package com.squareuptest.employeeconnect
 
 import dagger.Module
 import dagger.Provides
