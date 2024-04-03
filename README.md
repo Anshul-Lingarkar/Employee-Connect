@@ -13,10 +13,12 @@ Dagger = 2.16
 ## Steps to run the app
 
 1. Begin by downloading the provided zip folder and extracting its contents.
-2. Launch Android Studio (Version utilized for this project: Android Studio Giraffe | 2022.3.1 Patch
+2. If you are missing the sdk.dir address to you Android SDK, mention it in local.properties file.
+   For eg. sdk.dir=/Users/anshul_l/Library/Android/sdk
+3. Launch Android Studio (Version utilized for this project: Android Studio Giraffe | 2022.3.1 Patch
     2) and navigate to the root directory of the project - "EmployeeConnect".
-3. Synchronize the Gradle files to ensure proper configuration and using Gradle Version 8.0.
-4. Establish a connection between the laptop and an Android device, or start an emulator.
+4. Synchronize the Gradle files to ensure proper configuration and using Gradle Version 8.0.
+5. Establish a connection between the laptop and an Android device, or start an emulator.
 5. From the toolbar, select "Run" and then choose "Run App" to execute the application.
 
 ## What areas of the app did you focus on?
@@ -52,13 +54,13 @@ this Application.
 
 I spent around 6 hours for the development of this project.
 
-I had distributed my work over 4 days, where I worked on UI and basic setup, adding logo for the app
-on Day 1.
-Then I worked on using the Retrofit for API call, handling unnecessary API call while rotating the
-phone screen, pull-to-refresh part and adding the employee photos, along with Basic UI testing of
-the App on Day 2.
-On Day 3, I worked on setting up the Dagger.
-On Day 4, I worked on error handling part and handling the other two provided endpoints - empty and
+I had distributed my work over 4 days.
+Day 1 - I worked on UI and basic setup, adding logo for the app.
+Day 2 - I worked on using the Retrofit for API call, handling unnecessary API call while rotating
+the phone screen, pull-to-refresh part and adding the employee photos, along with Basic UI testing
+of the App on Day 2.
+Day 3 - I worked on setting up the Dagger.
+Day 4 - I worked on error handling part and handling the other two provided endpoints - empty and
 malformed employees and then writing unit tests and overall testing of the app to check that it
 covers all the given requirements.
 
@@ -91,3 +93,16 @@ I have also hosted this project on my private repository and this is the link fo
 GitHub - https://github.com/Anshul-Lingarkar/Employee-Connect
 Since, I cannot add collaborators to this project, please let me know the email-ids, so that I can
 add collaborators in this Private repository as per the requirements.
+
+Following are the requirements that I captured from the given task details:
+
+- Each item in the view should contain a summary of the employee, including their photo, name, and
+  team and any other extra details.
+- sort and group by name or team. I have sorted the employees based on their Team.
+- Added pull-to-refresh functionality.
+- Error handling for No Internet, Malformed employee and empty response from API.
+- Showing loading, empty, and error states as per the scenario.
+- Loading the expensive resources like photos on-demand only, using the open source image caching.
+- No extra API call when phone is rotated or when memory is low.
+- Write Unit test cases for presenter.
+- In case of malformed employees, invalidate the entire list of employees.
