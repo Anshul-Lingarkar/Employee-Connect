@@ -6,4 +6,19 @@
     </style>
 
     <style name="Theme.EmployeeConnect" parent="Base.Theme.EmployeeConnect" />
+
+    <style name="EmployeeNameTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EmployeeTeamNameTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#666666</item>
+    </style>
+
+    <style name="EmployeeAdditionalDetailsStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#666666</item>
+    </style>
 </resources>

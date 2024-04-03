@@ -1,80 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:layout_margin="@dimen/card_view_margin">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:padding="@dimen/recycler_view_margin">
 
             <ImageView
                 android:id="@+id/employeePhoto"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="@dimen/employee_photo_dimensions"
+                android:layout_height="@dimen/employee_photo_dimensions"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginEnd="16dp"/>
+                android:layout_marginEnd="@dimen/recycler_view_margin" />
 
             <TextView
                 android:id="@+id/employeeName"
+                style="@style/EmployeeNameTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_toEndOf="@id/employeePhoto"
-                android:layout_alignTop="@id/employeePhoto"/>
+                android:layout_alignTop="@id/employeePhoto"
+                android:layout_toEndOf="@id/employeePhoto" />
 
             <TextView
                 android:id="@+id/employeeTeam"
+                style="@style/EmployeeTeamNameTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="#666666"
-                android:layout_toEndOf="@id/employeePhoto"
-                android:layout_below="@id/employeeName"/>
+                android:layout_below="@id/employeeName"
+                android:layout_toEndOf="@id/employeePhoto" />
 
             <ImageView
                 android:id="@+id/employeeContactLogo"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:src="@drawable/ic_phone_image"
-                android:layout_marginTop="20dp"
+                android:layout_width="@dimen/employee_contact_and_email_icon_size"
+                android:layout_height="@dimen/employee_contact_and_email_icon_size"
+                android:layout_below="@id/employeeTeam"
+                android:layout_marginTop="@dimen/margin_large"
                 android:layout_toEndOf="@id/employeePhoto"
-                android:layout_below="@id/employeeTeam"/>
+                android:src="@drawable/ic_phone_image" />
 
             <TextView
                 android:id="@+id/employeeContact"
+                style="@style/EmployeeAdditionalDetailsStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="#666666"
-                android:layout_toEndOf="@id/employeePhoto"
-                android:layout_below="@id/employeeContactLogo"/>
+                android:layout_below="@id/employeeContactLogo"
+                android:layout_toEndOf="@id/employeePhoto" />
 
             <ImageView
                 android:id="@+id/employeeEmailLogo"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/ic_email_logo"
+                android:layout_width="@dimen/employee_contact_and_email_icon_size"
+                android:layout_height="@dimen/employee_contact_and_email_icon_size"
+                android:layout_below="@id/employeeContact"
+                android:layout_marginTop="@dimen/margin_small"
                 android:layout_toEndOf="@id/employeePhoto"
-                android:layout_below="@id/employeeContact"/>
+                android:src="@drawable/ic_email_logo" />
 
             <TextView
                 android:id="@+id/employeeEmail"
+                style="@style/EmployeeAdditionalDetailsStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="#666666"
-                android:layout_toEndOf="@id/employeePhoto"
-                android:layout_below="@id/employeeEmailLogo"/>
+                android:layout_below="@id/employeeEmailLogo"
+                android:layout_toEndOf="@id/employeePhoto" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

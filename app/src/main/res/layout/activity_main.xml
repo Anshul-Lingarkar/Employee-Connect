@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#AAA3A3"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/main_app_background"
+    android:orientation="vertical"
     tools:context=".BaseActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbarMainApp"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#000000"
-        android:theme="?attr/actionBarTheme">
+        android:background="@color/black">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/ic_square_logo_white"
+            android:id="@+id/companyLogo"
+            android:layout_width="@dimen/main_app_logo"
+            android:layout_height="@dimen/main_app_logo"
             android:layout_gravity="center"
-            android:contentDescription="@string/company_logo" />
+            android:contentDescription="@string/company_logo"
+            android:src="@drawable/ic_square_logo_white" />
 
     </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
