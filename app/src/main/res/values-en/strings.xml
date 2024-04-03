@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Employee Connect</string>
-    <string name="no_response">There are currently no employees to display. Please check back at later time</string>
+    <string name="no_employees">No employees to display</string>
+    <string name="no_response">There are currently no employees to display. Please check back at a later time</string>
+    <string name="company_logo">Company Logo</string>
 </resources>

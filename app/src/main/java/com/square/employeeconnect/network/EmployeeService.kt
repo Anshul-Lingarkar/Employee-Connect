@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface EmployeeService {
-    @GET("employees.json")
+    @GET("employees_.json")
     fun getEmployees(): Call<EmployeeList>
 
     /*
