@@ -2,13 +2,13 @@ Android Studio Giraffe | 2022.3.1 Patch 2
 
 ## Build tools & versions used
 
-Android Studio Giraffe | 2022.3.1 Patch 2
-Gradle Version = 8.0
-Kotlin Version = 1.9.0
-Minimum SDK supported by the App = 24
-JUnit = 4.13.2
-Retrofit = 2.9.0
-Dagger = 2.16
+- Android Studio Giraffe | 2022.3.1 Patch 2
+- Gradle Version = 8.0
+- Kotlin Version = 1.9.0
+- Minimum SDK supported by the App = 24
+- JUnit = 4.13.2
+- Retrofit = 2.9.0
+- Dagger = 2.16
 
 ## Steps to run the app
 
