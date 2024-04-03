@@ -55,19 +55,19 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    implementation ("com.github.bumptech.glide:glide:4.12.0")
-    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
 
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
 
-    implementation ("com.google.dagger:dagger-android:2.16")
-    kapt ("com.google.dagger:dagger-compiler:2.16")
-    implementation ("javax.inject:javax.inject:1")
+    implementation("com.google.dagger:dagger-android:2.16")
+    kapt("com.google.dagger:dagger-compiler:2.16")
+    implementation("javax.inject:javax.inject:1")
 
     //For writing Test cases
-    testImplementation ("org.mockito:mockito-core:3.12.4")
-    testImplementation ("org.mockito:mockito-inline:3.12.4")
+    testImplementation("org.mockito:mockito-core:3.12.4")
+    testImplementation("org.mockito:mockito-inline:3.12.4")
 }
