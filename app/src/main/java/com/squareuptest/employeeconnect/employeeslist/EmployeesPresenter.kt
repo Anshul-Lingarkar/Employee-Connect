@@ -34,6 +34,7 @@ class EmployeesPresenter() : EmployeesModel.OnFinishedListener, EmployeesContrac
                 employeesView.showEmptyView()
             }
         }
+        employeesView.hideRefreshingIndicator()
     }
 
     override fun checkWellFormedEmployeeList(employees: EmployeeList?): Boolean {
@@ -59,6 +60,7 @@ class EmployeesPresenter() : EmployeesModel.OnFinishedListener, EmployeesContrac
     override fun onFailure(message: String) {
         employeesView.showEmptyView()
         employeesView.onResponseFailure(message)
+        employeesView.hideRefreshingIndicator()
     }
 
     override fun refreshData() {
