@@ -64,7 +64,6 @@ class EmployeesFragment : Fragment(), EmployeesContract.View, OnRefreshListener,
         mSwipeRefreshLayout.setOnRefreshListener {
             // Perform API call when user pulls to refresh
             presenter.requestDataFromServer()
-            mSwipeRefreshLayout.isRefreshing = false
         }
         apiLoader.visibility = View.VISIBLE
         employeesRecyclerView.visibility = View.GONE
